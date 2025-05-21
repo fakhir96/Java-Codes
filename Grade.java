@@ -1,17 +1,17 @@
 import java.util.Scanner;
 
 public class Grade {
-    
+    //Method to Round Off Each Array Elelment 
     public static int[] gradingStudents(int[] arr){
-        for(int i = 0; i<arr.length; i++){
-            if(arr[i] < 38){
-                
-                continue;
+        for(int i = 0; i<arr.length; i++){ // Loop for the grades array
+            if(arr[i] < 38){ // Fail condition
+                continue; //skipping the fall
             }
-            for(int x = 0; x<5; x++){
-                int a = arr[i] + x;
-                if(a % 5 == 0 && x<3){
-                    arr[i] = a;
+            // Actual Round Off Logic
+            for(int x = 0; x<5; x++){ 
+                int rounded = arr[i] + x;
+                if(rounded % 5 == 0 && x<3){
+                    arr[i] = rounded;
                 }
             }
         }
@@ -52,6 +52,7 @@ public class Grade {
             System.out.println(grades[x]);
         }
 
+        // Round Off Through Function and save into the array grades
         grades = gradingStudents(grades);
 
 
