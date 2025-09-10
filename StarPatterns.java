@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Bulb {
+public class StarPatterns {
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
         
@@ -221,46 +221,73 @@ public class Bulb {
 
         // Pattern 9
         
-        // *   *
-        //  * *
-        //   *
-        //  * *
-        // *   *
+        // *                               *
+        //         *               *
+        //                 *
+        //         *               *
+        // *                               *
 
         // System.out.print("Enter n: ");
         // int n = scn.nextInt();
 
-        // int mt = (n/2) + 1;
-        // int lt = 0;
-
         // for(int i = 1; i<=n; i++){
 
-        //     for(int j = 0; j<lt; j++){
-        //         System.out.print(" ");
-        //     }
-        //     System.out.print("*");
-            
-        //     for(int k = 1; k<=mt; k++){
-        //         System.out.print(" ");
-        //     }
-        //     if(i == (n/2)+1){
-        //         lt--;
-        //         mt+=2;
-        //     }
-        //     else if(i > (n/2)+1){
-        //         lt--;
-        //         mt+=2;
-        //         System.out.print("*");
-        //     }
-        //     else{
-        //         lt++;
-        //         mt-=2;
-        //         System.out.print("*");
+        //     for(int j = 1; j<=n; j++){
+        //         if(i == j || i + j == n + 1){
+        //             System.out.print("*\t");            
+        //         }
+        //         else{
+
+        //                 System.out.print("\t");
+        //         }
         //     }
 
         //     System.out.println();
         // }
 
+
+// ----------------------------------------------------------------
+
+        // Pattern 10
+        
+        //         *
+        //     *       *
+        // *               *
+        //     *       *
+        //         *
+
+
+        System.out.print("Enter n: ");
+        int n = scn.nextInt();
+
+        int lt = n / 2;
+        int mt = -1;
+
+        for(int i = 1; i<=n; i++){
+
+                for(int j = 1; j<=lt; j++){
+                        System.out.print("\t");
+                }
+                System.out.print("*\t");
+
+                for(int k = 1; k<=mt; k++){
+                        System.out.print("\t");
+                }
+                if(i>1 && i<n){
+                        System.out.print("*\t");
+                }
+
+                if(i <= (n /2)){
+                        lt--;
+                        mt +=2;
+                }
+                else{
+                        lt++;
+                        mt -=2;
+                }
+
+                System.out.println();
+        }
         scn.close();
     }
 }
